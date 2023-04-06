@@ -11,8 +11,6 @@ Ensure that you are in the main directory and run the following
 
 This _must_ be done before you can run the program.
 
-__This is bold__
-
 ```shell
 $ pip install -r reqiorements.txt
 
