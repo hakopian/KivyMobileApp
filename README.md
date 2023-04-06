@@ -9,7 +9,7 @@ they will be given that option.
 
 Ensure that you are in the main directory and run the following
 
-_This must be done before you can run the program.
+This _must_ be done before you can run the program.
 
 __This is bold__
 
