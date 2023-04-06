@@ -1,0 +1,334 @@
+ScreenManager:
+    Screen:
+        name: 'login'
+        username: username
+        password: password
+        cols: 2
+        orientation:
+        Image:
+            source: 'videos/images/lift.jpg'
+            allow_stretch: True
+            keep_ratio: False
+        FloatLayout:
+            orientation: 'vertical'
+            Label:
+                id: result
+                text: 'Welcome!'
+                font_name: 'Freedom-10eM.ttf'
+                font_size: '20dp'
+                size_hint: 1, 0.04
+                pos: "20dp", "120dp"
+            Label:
+                text: "Olympia"
+                size_hint : .75, .5
+                font_name: 'Freedom-10eM.ttf'
+                font_size: '40dp'
+                pos: "95dp","300dp"
+            Label:
+                text: "Weightlifting"
+                size_hint : .75, .5
+                font_name: 'Freedom-10eM.ttf'
+                font_size: '40dp'
+                pos: "95dp","250dp"
+            Label:
+                text: "Center"
+                size_hint : .75, .5
+                font_name: 'Freedom-10eM.ttf'
+                font_size: '40dp'
+                pos: "95dp","200dp"
+            Label:
+                text: 'Username'
+                size_hint: 0.2, 0.1
+                font_name: 'Freedom-10eM.ttf'
+                font_size: '20dp'
+                pos: "150dp","260dp"
+            TextInput:
+                text: ""
+                id: user_n
+                multiline: False
+                size_hint: 0.3, 0.04
+                pos: "300dp","280dp"
+            Label:
+                text: 'Password'
+                font_name: 'Freedom-10eM.ttf'
+                font_size: '20dp'
+                size_hint: 0.2, 0.1
+                pos: "150dp","230dp"
+            TextInput:
+                text: ""
+                id: pass_w
+                multiline: False
+                size_hint: 0.3, 0.04
+                pos: "300dp","250dp"
+            Button:
+                text: 'Login'
+                font_name: 'Freedom-10eM.ttf'
+                size_hint: 0.3, 0.04
+                pos: "300dp", "200dp"
+                on_press: app.checker()
+            Button:
+                text: 'Sign Up'
+                font_name: 'Freedom-10eM.ttf'
+                size_hint: 0.3, 0.04
+                pos: "300dp", "160dp"
+                on_press: app.root.current = 'signup'
+
+
+    Screen:
+        name: 'signup'
+        orientation: 'vertical'
+        Image:
+            source: 'videos/images/signup.jpg'
+            size_hint: 1, 1
+            pos: "1dp","1dp"
+            allow_stretch: True
+            keep_ratio: False
+        Label:
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '30dp'
+            text: 'User/'
+            pos: "-340dp","280dp"
+        Label:
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '30dp'
+            text: 'Name'
+            pos: "-340dp","260dp"
+        TextInput:
+            id: username
+            multiline: False
+            size_hint: 0.15, 0.04
+            pos: "135dp","560dp"
+        Label:
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '30dp'
+            text: 'Pass/'
+            pos: "-340dp","230dp"
+        Label:
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '30dp'
+            text: 'Word'
+            pos: "-340dp","210dp"
+        TextInput:
+            id: password
+            multiline: False
+            size_hint: 0.15, 0.04
+            pos: "135dp","510dp"
+        Label:
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '30dp'
+            text: 'Age'
+            pos: "-360dp","170dp"
+        TextInput:
+            id: age
+            multiline: False
+            size_hint: 0.15, 0.04
+            pos: "135dp","460dp"
+        Label:
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '30dp'
+            text: 'Gender'
+            pos: "-330dp","130dp"
+        TextInput:
+            id: Gender
+            multiline: False
+            size_hint: 0.15, 0.04
+            pos: "135dp","418dp"
+        Label:
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '30dp'
+            text: 'Email'
+            pos: "340dp","230dp"
+        TextInput:
+            id: Email
+            multiline: False
+            size_hint: 0.2, 0.04
+            pos: "520dp","518dp"
+        Label:
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '30dp'
+            text: 'Phone'
+            pos: "340dp","190dp"
+        TextInput:
+            id: Phone
+            multiline: False
+            size_hint: 0.2, 0.04
+            pos: "520dp","478dp"
+        Button:
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '30dp'
+            text: 'Sign Up'
+            size_hint: .2, .05
+            pos: "320dp","90dp"
+            on_press: app.create()
+            on_press: app.root.current = 'login'
+
+    Screen:
+        name: "workout-selection"
+        orientation: 'vertical'
+        Image:
+            source: 'videos/images/signup.jpg'
+            size_hint: 1, 1
+            pos: "1dp","1dp"
+            allow_stretch: True
+            keep_ratio: False
+        Label:
+            text: "Select your movement"
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '30dp'
+            size_hint: .5, .5
+            pos: "200dp","350dp"
+        Label:
+            text: "Enroll in classes today?"
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '30dp'
+            size_hint: .5, .5
+            pos: "200dp","-60dp"
+        Video:
+            id: video
+            source: "videos/SnatchVideo.mp4"
+            play: False
+            options: {"eos":"stop"}
+            opacity: 0
+        Video:
+            id: video1
+            source: "videos/CleanVideo.mp4"
+            play: False
+            options: {"eos":"stop"}
+            opacity: 0
+        Video:
+            id: video2
+            source: "videos/DeadLift.mp4"
+            play: False
+            options: {"eos":"stop"}
+            opacity: 0
+        Video:
+            id: video3
+            source: "videos/BackSquat.mp4"
+            play: False
+            options: {"eos":"stop"}
+            opacity: 0
+        Video:
+            id: video4
+            source: "videos/FrontSquat.mp4"
+            play: False
+            options: {"eos":"stop"}
+            opacity: 0
+        Button:
+            text: 'Snatch'
+            size_hint: .15, .1
+            pos: "180dp", "525dp"
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '20dp'
+            on_release: app.playSnatch()
+        Button:
+            text: 'Clean'
+            size_hint: .15, .1
+            pos: "340dp", "525dp"
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '20dp'
+            on_release: app.playClean()
+        Button:
+            text: 'DeadLift'
+            size_hint: .15, .1
+            pos: "500dp", "525dp"
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '20dp'
+            on_release: app.playDeadLift()
+        Button:
+            text: 'BackSquat'
+            size_hint: .15, .1
+            pos: "650dp", "525dp"
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '15dp'
+            on_release: app.playBackSquat()
+        Button:
+            text: 'FrontSquat'
+            size_hint: .15, .1
+            pos: "30dp", "525dp"
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '15dp'
+            on_release: app.playFrontSquat()
+        Button:
+            text: 'Enroll'
+            size_hint: .15, .1
+            pos: "350dp","4dp"
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '20dp'
+            on_press: app.root.current = 'enrolled'
+        Button:
+            text: 'Stop Video'
+            size_hint: .15, .1
+            pos: "30dp","4dp"
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '20dp'
+            on_press: app.stop()
+
+    Screen:
+        name: 'enrolled'
+        orientation: 'vertical'
+        Image:
+            source: 'videos/images/signup.jpg'
+            size_hint: 1, 1
+            pos: "1dp","1dp"
+            allow_stretch: True
+            keep_ratio: False
+        Label:
+            id: test
+            text: 'How many days a week would you like to train?'
+            font_name: 'Freedom-10eM.ttf'
+            font_size: '23dp'
+            pos: "0dp", "-170dp"
+        Slider:
+            id: my_slider
+            size_hint: .3, .3
+            pos: "280dp", "-7dp"
+            min: 1
+            max: 7
+            value: 3
+            orientation:
+        FloatLayout:
+            orientation:
+            Label:
+                text: str(int(my_slider.value))
+                pos: "-135dp", "-220dp"
+                font_size: '25dp'
+            Label:
+                id: goodbye
+                text: 'Thank you for enrolling     A trainer will contact you!'
+                font_name: 'Freedom-10eM.ttf'
+                font_size: '23dp'
+                pos: "0dp", "200dp"
+                opacity: 0
+            Button:
+                text: "Confirm"
+                size_hint: 0.12, 0.1
+                pos: "350dp", "2dp"
+                font_name: 'Freedom-10eM.ttf'
+                font_size: '20dp'
+                on_press: goodbye.opacity = 1
+                on_release: test.opacity = 0
+               # on_press: app.root.current = 'confirmed'
+            Button:
+                text: "Back"
+                size_hint: 0.1, 0.1
+                pos: "10dp", "2dp"
+                font_name: 'Freedom-10eM.ttf'
+                font_size: '20dp'
+                on_press: app.root.current = 'workout-selection'
+            Button:
+                text: "Exit"
+                size_hint: 0.1, 0.1
+                pos: "700dp", "2dp"
+                font_name: 'Freedom-10eM.ttf'
+                font_size: '20dp'
+                on_release: quit()
+
+
+
+
+
+
+
+
+
+
